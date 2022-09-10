@@ -1,0 +1,27 @@
+Dodana sans serif do czcionki
+Zmienione nazwy klas bo trudno się połapać i modyfikować je - klasy powinny mieć takie nazwy, żeby każdy developer pracujący w projekcie w zespole mógł szybko się ogarnąć co i jak.
+
+Wywalone znaczniki <hr> , <strong> -> html służy do określania struktury strony, cala stylizacja powinna być zrobiona css’em, nie używa się już stringów hr, br etc - zła praktyka, czyli border zawsze robimy w CSS
+
+Product.title podzielony za pomocą STRING.split() na artystę i tytuł - dzięki temu, tytuł może być przeniesiony do drugiej lini, jest więcej miejsca i nie rozwala struktury strony .
+
+Zdjęcia - powinno się wrzucać zdjęcia tej samej wielkości żeby się dobrze zachowywaly przy różnych rozmiarach, ale tutaj są różne, więc żeby nie rozwalały struktury strony muszą być niekiedy przycięte.
+
+Flex row zmieniony na flex column poniżej 768px - to jest standardowy breakpoint dla mniejszych ekranów - teraz strona wyświetla się inaczej na mniejszych ekranach i nie obcina treści.
+
+Koszyk rozszerza się i znika w zależności czy jest  pełny czy nie.
+
+ShowCart?
+
+Zazwyczaj takie rzeczy jak guziki do dodania lub usuwania ilości, tytuły piosenek buttony etc. powinny mieć taką samą wielkość i być w tych samych miejscach, niezależnie od treści, czyli nie powinno być tak, że dłuższa nazwa piosenki rozszerza Ci jeden button a inne nie - powinny być proporcjonalne, chyba, że chcesz osiągnąć inny efekt, ale musi to być zamierzone a tutaj nie jest ewidentnie - pozmieniałem.
+
+
+Trochę jest za dużo wszędzie divów - przy małej stronce nie ma to większego znaczenia, ale przy większej ilości tekstu kod staje się nieczytelny i trudno się połapać co i jak.
+
+Koszyk - zmiana szerokości jak pusty i pełny za pomocą zmiany klasy
+<aside className={cartItems.length ? " basket block column-1 " : " basketEmpty block column-1 "}>
+
++ use Effect
+
+
+Kliknięcie na cart blokowało Ci przewijanie strony - nie widziałeś tego bo strona za niska  -> link zmieniony na button bo nie ma tam żadnego linka - koszyk w mobile przeniesiony na dół, kliknięcie na cart powoduje przewinięcie strony na sam dół
