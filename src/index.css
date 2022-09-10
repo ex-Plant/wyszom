@@ -1,0 +1,249 @@
+/*reset styles*/
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    font-family: Helvetica sans-serif;
+    padding: 10px;
+}
+
+h1, h2 {
+    margin: 0.5rem 0;
+}
+
+h1 {
+    /* font-size: 1.5rem; */
+    font-size: 150%;
+}
+
+h2 {
+    /* font-size: 1.2rem; */
+    font-size: 120%;
+}
+
+h3 {
+    font-size: 100%;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.row.center {
+    align-items: center;
+}
+
+.column-2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.block {
+    background-color: grey;
+    padding: 1%;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+
+
+button {
+    font-size: 80%;
+    padding: 2%;
+    margin: 0.1rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid black;
+    background-color: burlywood;
+    width: 100%;
+    cursor: pointer;
+}
+
+button.add {
+    background-color: aqua;;
+    width: 1.5rem;
+}
+
+button.remove {
+    background-color: red;
+    width: 1.5rem;
+}
+
+button.badge {
+    background-color: red;
+    border: none;
+    color: white;
+    width: 1.5rem;
+}
+
+.text-right {
+    text-align: right;
+}
+
+a.yt-link {
+    font-style: italic;
+    color: burlywood;
+    cursor: pointer;
+    font-size: 110%;
+}
+
+a.yt-link:hover {
+    color: teal;
+}
+
+.basket-titles {
+    padding: 1% 0%;
+}
+
+.appMain {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*fixed header so it's always visible no matter how many items */
+.header {
+    position: fixed;
+    top: 0;
+    right: 10px;
+    left: 10px;
+    box-shadow: 0 2px 2px;
+    padding: 0 5px;
+}
+
+.clickable {
+    display: none;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.singleProduct {
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+}
+
+.basketEmpty {
+    justify-self: end;
+    margin-right: 10px;
+    min-width: 100px;
+    transition: ease-in-out 2000ms;
+}
+
+.basket {
+    min-width: 15vw;
+    transition: ease-in 1000ms;
+    flex-shrink: 0;
+}
+
+.opacity {
+    opacity: 100%;
+    transition: ease-in-out 1000ms;
+}
+
+.noOpacity {
+    opacity: 0;
+    transition: ease-in-out 1000ms;
+}
+
+.basketItems {
+    padding-bottom: 8px;
+    padding-top: 8px;
+    border-bottom: 2px solid #deb887;
+    justify-content: space-between;
+}
+
+.basketItems div:first-child {
+    padding-right: 20px
+}
+
+.basketSummary {
+    margin-bottom: 8px;
+    padding: 8px 0 8px 0;
+    border-bottom: 2px solid #deb887;
+}
+
+/*total price */
+.basketSummary div:last-child {
+    font-weight: bold;
+}
+
+/* number of records + price */
+.basketItems aside div:nth-child(2) {
+    min-width: 80px;
+}
+
+.imageContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+img.small {
+    width: 100%;
+    height: 25vw;
+    object-fit: cover;
+}
+
+.productDetails * {
+    padding: 8px 0 0 0;
+}
+
+.productDetails button {
+    padding: 4px;
+    margin-bottom: 10px;
+}
+
+
+/* change direction of the page to portrait */
+@media (max-width: 768px) {
+    .appMain {
+        flex-direction: column;
+        width: 100%;
+        margin: 45px auto;
+    }
+
+    .header {
+        font-size: 90%;
+    }
+    .notClickable {
+        display: none;
+    }
+    .clickable {
+        display: block;
+    }
+
+    img.small {
+        height: auto;
+    }
+
+    .products {
+        flex-direction: column;
+    }
+
+    .singleProduct {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .basketEmpty {
+        width: auto;
+        transition: ease-in-out 2000ms;
+        margin-right: 0;
+    }
+
+    .basket {
+        width: auto;
+        transition: ease-in 1000ms;
+    }
+
+}
